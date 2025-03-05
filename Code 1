@@ -1,0 +1,20 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+%matplotlib inline
+
+#Train the Data Upto First five datas
+df_train=pd.read_csv('/kaggle/input/loan-eligible-dataset/loan-train.csv')
+df_test=pd.read_csv('/kaggle/input/loan-eligible-dataset/loan-test.csv')
+
+df_train.head()
+
+df_test.head()
+
+df_train.info()
+'''<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 614 entries, 0 to 613
+Data columns (total 13 columns): '''
+
+df_train.describe()
