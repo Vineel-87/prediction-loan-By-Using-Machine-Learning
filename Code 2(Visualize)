@@ -1,0 +1,21 @@
+obj = (data.dtypes == 'object')
+print("Categorical variables:",len(list(obj[obj].index)))
+
+#Output : Categorical variables: 7 
+
+# Dropping Loan_ID column
+
+data.drop(['Loan_ID'],axis=1,inplace=True)
+Visualize all the unique values in columns using barplot. This will simply show which value is dominating as per our dataset.
+
+obj = (data.dtypes == 'object')
+object_cols = list(obj[obj].index)
+plt.figure(figsize=(18,36))
+index = 1
+
+for col in object_cols:
+  y = data[col].value_counts()
+  plt.subplot(11,4,index)
+  plt.xticks(rotation=90)
+  sns.barplot(x=list(y.index), y=y)
+  index +=1 
